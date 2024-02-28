@@ -1,0 +1,10 @@
+body {
+	background: #ff839c;
+	height: 100vh;
+	margin: auto;
+}
+
+svg {
+	display: block;
+	margin: auto;
+}
