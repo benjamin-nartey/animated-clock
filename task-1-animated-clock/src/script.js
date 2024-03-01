@@ -19,7 +19,6 @@
   hourHand.setAttribute("transform", `rotate(${hourAngle}, 244,251) `);
 
   const tick = new Audio("./media/tick.mp3");
-  let timer = 0;
 
   tick.play();
 
