@@ -1,5 +1,6 @@
 const addItems = document.querySelector(".add-items");
 const itemsList = document.querySelector(".plates");
+const checkboxes = document.querySelectorAll("[name=checkbox]");
 
 let store = localStorage.getItem("todoList")
   ? JSON.parse(localStorage.getItem("todoList"))
@@ -24,12 +25,13 @@ const AddToList = (event) => {
 function renderList(lists = []) {
   itemsList.innerHTML = lists
     .map(
-      (list, i) => `
+      (list, i) =>
+        `
     <li>
-    <input type="checkbox" onclick='checkItem(${i})' ${
-        list.isChecked ? "checked" : ""
-      } id=${i} />
-    <label for ${i}> <span>${list.text}</span></label>
+    <input onclick ='checkItem(${i})' type="checkbox" ${
+          list.isChecked ? "checked" : ""
+        } id=${i} />
+    <label for=${i}> <span>${list.text}</span></label>
     <button onclick ='deleteItem(${i})' class ='delete' id=${i}>X</button>
     </li>
     `
@@ -41,6 +43,7 @@ function deleteItem(index) {
   const storeCopy = [...store];
 
   storeCopy.splice(index, 1);
+  0;
 
   store = storeCopy;
   localStorage.setItem("todoList", JSON.stringify(store));
